@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header id="home">
+        <a  class="logo" href="">MERON</a>
+        <ul>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://api.coingecko.com/api/v3/exchange_rates">Api</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <!-- Heading for the exchange rates section -->
+        <h2>Real time exchange rates</h2>
+        <div class="container">
+            <% if (locals.content) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <!-- Table headers -->
+                        <th>Currency</th>
+                        <th>Value</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%  for (const currencyCode in content.rates) { %>
+                      <% if (content.rates.hasOwnProperty(currencyCode)) { %> 
+                          <%  const currency = content.rates[currencyCode]; %>
+                            <!-- Table rows -->
+                            <tr class="hoverable-row">
+                                <!-- Display currency name -->
+                                <td><%= currency.name %></td>
+                                <!-- Format and display currency value -->
+                                <td><%= currency.value.toLocaleString(undefined, {
+                                  minimumFractionDigits: 0,
+                                  maximumFractionDigits: 0,
+                                  useGrouping: true,
+                                  decimal: ".",
+                                  thousands: ","
+                                }); %> <%= currency.unit %></td>
+                                <!-- Display currency type -->
+                                <td><%= currency.type %></td>
+                            </tr>
+                      <% } %> 
+                    <% } %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <!-- Display error message if content is not available -->
+            <div class="error"><%= locals.error %></div>
+        <% } %>
+      </div>
+    </section>
+    
+
+    <footer>
+        <div class="contact" id="contact">
+            <a href="#home">Home</a>
+            contact me: 
+            <a href="https://m.me/meron.michael.79"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="https://www.twitter.com/MeronMichael15"><i class='bx bxl-twitter' ></i></a>
+            <a href="https://www.linkedin.com/in/meron-michael-4b94a7221"><i class='bx bxl-linkedin' ></i></a>
+            <a href="https://wa.me/244922706107"><i class='bx bxl-whatsapp' ></i></a>
+        </div>
+        <p>Copyright © MERON <%= new Date().getFullYear()  %></p>
+    </footer>
+</body>
+</html>

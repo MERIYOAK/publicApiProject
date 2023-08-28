@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+header {
+    background-color: blue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    min-width: 400px;
+}
+
+a {
+    color: white;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+section h2 {
+    text-align: center;
+    margin: 1.5rem 0 .5rem 0;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+table, .error {
+    margin: 0 auto;
+    width: 30%;
+    min-width: 400px;
+}
+
+tr {
+    background-color: rgb(69, 69, 241);
+    border: 1px solid black;
+    color: white;
+    height: 30px;
+    text-align: center;
+}
+
+.hoverable-row {
+    transition: background-color 0.2s ease; /* Add smooth transition effect */
+    height: 40px;
+}
+
+.hoverable-row:hover {
+    background-color: #f0f0f0; /* Change to your desired hover background color */
+    color: black;
+}
+
+footer {
+    background-color: blue;
+    color: white;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+i {
+    transition: color .5s ease-in-out;
+}
+
+i:hover {
+    color: rgb(75, 70, 70);
+}
+
+footer p {
+    padding: 10px 0 0;
+    text-align: center;
+}
+
+footer {
+    min-width: 400px;
+}
