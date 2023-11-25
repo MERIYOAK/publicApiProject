@@ -1,7 +1,5 @@
 // Import required modules
 import express from 'express'; // Import the Express framework
-import axios from 'axios'; // Import the Axios library for making HTTP requests
-
 // Create an Express app and set the port number
 const app = express();
 const port = 3000;
